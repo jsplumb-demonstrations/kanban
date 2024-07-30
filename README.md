@@ -4,4 +4,4 @@ This starter app provides a fully featured Kanban board using JsPlumb's React in
 
 ## Demonstration
 
-[http://jsplumbtoolkit.com/demonstrations/kanban](http://jsplumbtoolkit.com/demonstrations/kanban)
+[https://jsplumbtoolkit.com/demonstrations/kanban](http://jsplumbtoolkit.com/demonstrations/kanban)
