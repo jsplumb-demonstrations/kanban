@@ -1,0 +1,25 @@
+{
+  "groups": [
+    {"id": "todo", "title": "Todo", "description":"This item hasn't been started", "color":"#077407"},
+    {"id": "inprogress", "title": "In Progress", "description":"This is actively being worked on", "color":"#e69119"},
+    {"id": "done", "title": "Done", "description":"This has been completed", "color":"#C92508"}
+  ],
+  "nodes": [
+    {"id": "item1", "name": "Item 1", "group": "todo", "order":3, "description":"This is the first item"},
+    {"id": "item2", "name": "Item 2", "group": "todo", "order":2, "description":"This is the second item"},
+    {"id": "item3", "name": "Item 3", "group":"todo", "order":1, "description":"This is the third item"},
+    {"id": "item4", "name": "Item 4", "group":"todo", "order":0, "description":"This is the fourth item"},
+    {"id": "item5", "name": "Item 5", "group": "inprogress", "order":1, "description":"This is in progress"},
+    {"id": "item6", "name": "Item 6", "group":"inprogress", "order":2, "description":"This is in progress"},
+    {"id": "item7", "name": "Item 7", "group": "inprogress", "order":0, "description":"This is in progress"},
+    {"id": "item8", "name": "Item 8", "group": "done", "order":0, "description":"This is done"},
+    {"id": "item9", "name": "Item 9", "group":"todo", "order":4, "description":"This is done"},
+    {"id": "item10", "name": "Item 10", "group":"todo", "order":5, "description":"This is done"},
+    {"id": "item11", "name": "Item 11", "group":"todo", "order":7, "description":"This is done"},
+    {"id": "item12", "name": "Item 12", "group":"todo", "order":6, "description":"This is done"},
+    {"id": "item13", "name": "Item 13", "group":"todo", "order":10, "description":"This is done"},
+    {"id": "item14", "name": "Item 14", "group":"todo", "order":9, "description":"This is done"},
+    {"id": "item15", "name": "Item 15", "group":"todo", "order":8, "description":"This is done"},
+    {"id": "item16", "name": "Item 16", "group":"todo", "order":11, "description":"This is done"}
+  ]
+}
