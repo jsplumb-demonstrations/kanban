@@ -1,29 +1,13 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useState} from "react";
 
-import { Node, Group, Inspector} from "@jsplumbtoolkit/browser-ui"
+import {InspectorComponent} from "@jsplumbtoolkit/browser-ui-react"
+import { Node, Group } from "@jsplumbtoolkit/browser-ui"
 
-export default function InspectorComponent({surface}) {
+export default function KanbanInspectorComponent() {
 
-    const container = useRef(null)
     const [currentType, setCurrentType] = useState('')
-    const [inspector, setInspector] = useState(null)
 
-    useEffect(() => {
-
-        setInspector(new Inspector({
-            container:container.current,
-            surface,
-            renderEmptyContainer:() => setCurrentType(''),
-            refresh:(obj, cb) => {
-                setCurrentType(obj.objectType)
-                // next tick
-                setTimeout(cb)
-            }
-        }))
-
-    }, [])
-
-    return <div ref={container}>
+    return <InspectorComponent renderEmptyContainer={() => setCurrentType('')} refresh={(obj,cb) => setCurrentType(obj.objectType)}>
 
         { currentType === '' && <></> }
 
@@ -47,6 +31,6 @@ export default function InspectorComponent({surface}) {
         </div>
         }
 
-    </div>
+    </InspectorComponent>
 
 }

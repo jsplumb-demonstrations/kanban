@@ -1,13 +1,13 @@
-import { useRef, useEffect } from 'react'
-import { createRoot } from "react-dom/client";
+import React, { useRef, useEffect } from 'react'
 
-import { JsPlumbToolkitSurfaceComponent } from "@jsplumbtoolkit/browser-ui-react"
+import { SurfaceComponent, SurfaceProvider} from "@jsplumbtoolkit/browser-ui-react"
 import { EVENT_TAP, EmptyLayout, uuid, newInstance, RowLayout, EVENT_CANVAS_CLICK } from "@jsplumbtoolkit/browser-ui"
 
 import ColumnComponent from './ColumnComponent'
 import ItemComponent from './ItemComponent'
 import { DragManager } from './drag-manager'
-import Inspector from './InspectorComponent'
+import KanbanInspectorComponent from "./InspectorComponent";
+
 
 export default function Kanban(props) {
 
@@ -72,7 +72,7 @@ export default function Kanban(props) {
                 color:"#FFFFFF"
             })
             event.target.value = ""
-            const el = surfaceRef.current.surface.getRenderedElement(column)
+            const el = surfaceRef.current.getSurface().getRenderedElement(column)
             el.scrollIntoView()
         }
     }
@@ -80,40 +80,36 @@ export default function Kanban(props) {
     useEffect(() => {
         if (!initialized.current) {
             initialized.current = true
-
-            new DragManager(surfaceRef.current.surface)
-
-            const ic = createRoot(inspectorContainer.current)
-            ic.render(<Inspector surface={surfaceRef.current.surface} container={inspectorContainer.current}/>)
-
-            toolkit.load({
-                url:'/public/dataset.json'
-            })
+            new DragManager(surfaceRef.current.getSurface())
         }
     })
 
     return <div className="jtk-kanban-main">
-            <div className="jtk-kanban-container">
-                <JsPlumbToolkitSurfaceComponent 
-                    view={view}
-                    renderParams={renderParams} 
-                    ref={surfaceRef}
-                    toolkit={toolkit}
-                    />
-            </div>
-
-            <div className="jtk-kanban-rhs">
-
-                <div id="controls">
-                    <input type="text" id="txtAddColumn" placeholder="Add column..." onKeyPress={(e) => addColumn(e)}/>
+            <SurfaceProvider>
+                <div className="jtk-kanban-container">
+                    <SurfaceComponent
+                        viewOptions={view}
+                        renderOptions={renderParams}
+                        ref={surfaceRef}
+                        toolkit={toolkit}
+                        url='/public/dataset.json'
+                        />
                 </div>
 
-                <div id="inspector" ref={inspectorContainer}/>
+                <div className="jtk-kanban-rhs">
 
-                <div className="description">
+                    <div id="controls">
+                        <input type="text" id="txtAddColumn" placeholder="Add column..." onKeyPress={(e) => addColumn(e)}/>
+                    </div>
 
+                    <KanbanInspectorComponent/>
+
+                    <div className="description">
+
+                    </div>
                 </div>
-            </div>
+
+            </SurfaceProvider>
 
         </div>
 
