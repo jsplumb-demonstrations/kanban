@@ -1,6 +1,11 @@
 import {AfterViewInit, Component, Input, ViewChild} from "@angular/core"
 import {EVENT_CANVAS_CLICK, EVENT_TAP, RowLayout, Surface, uuid, Node, EmptyLayout} from "@jsplumbtoolkit/browser-ui"
-import {AngularRenderOptions, BrowserUIAngular, jsPlumbSurfaceComponent} from "@jsplumbtoolkit/browser-ui-angular"
+import {
+  AngularRenderOptions,
+  BrowserUIAngular,
+  DEFAULT_ANGULAR_SURFACE_ID,
+  SurfaceComponent
+} from "@jsplumbtoolkit/browser-ui-angular"
 import {ItemComponent} from "./item.component"
 import {ColumnComponent} from "./column.component"
 import {DragManager} from "./drag-manager"
@@ -26,9 +31,9 @@ import {DragManager} from "./drag-manager"
 })
 export class KanbanComponent implements AfterViewInit {
 
-  @Input() kanbanId!:string
+  @Input() kanbanId:string = DEFAULT_ANGULAR_SURFACE_ID
 
-  @ViewChild(jsPlumbSurfaceComponent) surfaceComponent!:jsPlumbSurfaceComponent;
+  @ViewChild(SurfaceComponent) surfaceComponent!:SurfaceComponent;
   toolkit!:BrowserUIAngular
   surface!:Surface
 
