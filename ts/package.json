@@ -1,6 +1,6 @@
 {
     "name": "kanban",
-    "version": "6.72.0",
+    "version": "6.80.0",
     "description": "",
     "main": "demo.js",
     "scripts": {
@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/jsplumb-demonstrations/kanban#readme",
     "dependencies": {
-        "@jsplumbtoolkit/browser-ui": "^6.72.0"
+        "@jsplumbtoolkit/browser-ui": "^6.80.0"
     },
     "devDependencies": {
         "@types/node": "14.17.3",
