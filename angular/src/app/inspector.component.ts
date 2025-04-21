@@ -5,7 +5,7 @@ import { Node, Group } from "@jsplumbtoolkit/browser-ui"
 @Component({
     template:`<div class="inspector">
       
-      @if(currentType === NODE) {
+      @if(currentObjectType === NODE) {
         <div class="jtk-kanban-inspector">
             <strong>Label</strong>
             <input jtk-att="name" type="text">
@@ -14,7 +14,7 @@ import { Node, Group } from "@jsplumbtoolkit/browser-ui"
         </div>
       }  
 
-      @if(currentType === GROUP) {
+      @if(currentObjectType === GROUP) {
         <div class="jtk-kanban-inspector">
           <strong>Title</strong>
           <input jtk-att="title" type="text">
