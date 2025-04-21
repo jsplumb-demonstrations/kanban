@@ -26,7 +26,7 @@ import {DragManager} from "./drag-manager"
         <input type="text" id="txtAddColumn" placeholder="Add column..." (keypress)="addColumn($event)">
       </div>
       <!-- node/group inspector -->
-      <app-inspector [surfaceId]="kanbanId"></app-inspector>  
+      <app-inspector [surfaceId]="kanbanId"/>  
     </div>`
 })
 export class KanbanComponent implements AfterViewInit {
