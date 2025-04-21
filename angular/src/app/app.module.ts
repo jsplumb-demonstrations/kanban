@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import {ColumnComponent} from "./column.component"
 import {KanbanComponent} from "./kanban.component"
 import {ItemComponent} from "./item.component"
-import {InspectorComponent} from "./inspector.component"
+import {KanbanInspectorComponent} from "./inspector.component"
 
 @NgModule({
   declarations: [
-    AppComponent, ColumnComponent, ItemComponent, KanbanComponent, InspectorComponent
+    AppComponent, ColumnComponent, ItemComponent, KanbanComponent, KanbanInspectorComponent
   ],
   imports: [
     BrowserModule, jsPlumbToolkitModule
